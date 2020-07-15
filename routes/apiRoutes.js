@@ -17,7 +17,7 @@ module.exports = function (app) {
         const newNote = req.body;
         newNote.id = uuidv1();
         notesArray.push(newNote);
-        fs.writeFileSync(`${__dirname}/../db/db.json`, JSON.stringify(dataArray), "utf8");
+        fs.writeFileSync(`${__dirname}/../db/db.json`, JSON.stringify(notesArray), "utf8");
         res.send("Your note has been created!")
     });
 
